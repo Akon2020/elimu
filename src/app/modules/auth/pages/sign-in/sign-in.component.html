@@ -1,10 +1,12 @@
 <form class="my-10 space-y-6" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="text-center">
-    <h2 class="text-foreground mb-1 text-3xl font-semibold">Heureux de vous revoir <span class="text-primary">!</span></h2>
+    <h2 class="text-foreground mb-1 text-3xl font-semibold">
+      Heureux de vous revoir <span class="text-primary">!</span>
+    </h2>
     <p class="text-muted-foreground text-sm">Entrez vos identifiants pour vous accéder à votre compte</p>
   </div>
 
-  <div routerLink="/dashboard">
+  <div routerLink="/dashboard/home">
     <app-button full impact="bold" tone="light" shape="rounded" size="medium">
       <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
       Connectez-vous avec Google

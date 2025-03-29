@@ -27,10 +27,10 @@ test('check user filter empty restores table', async ({ page }) => {
 
 test('check user status filter updates table', async ({ page }) => {
   const statusFilters = [
-    { value: '', expectedRowCount: 8 }, // All
-    { value: '1', expectedRowCount: 5 }, // Active
-    { value: '2', expectedRowCount: 2 }, // Disabled
-    { value: '3', expectedRowCount: 1 }, // Pending
+    { value: '', expectedRowCount: 8 },
+    { value: '1', expectedRowCount: 5 },
+    { value: '2', expectedRowCount: 2 },
+    { value: '3', expectedRowCount: 1 },
   ];
 
   for (const filter of statusFilters) {

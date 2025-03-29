@@ -1,18 +1,18 @@
 <div class="mb-4 flex justify-between">
   <div class="inline-block">
-    <h3 class="text-foreground font-semibold">Team Members</h3>
+    <h3 class="text-foreground font-semibold">Les utilisateurs</h3>
     <div class="text-muted-foreground space-x-1 text-xs font-medium">
-      <a href="" class="hover:text-primary">All Members:</a>
-      <span class="text-foreground">49,053</span>
+      <a href="" class="hover:text-primary">Total:</a>
+      <span class="text-foreground">730</span>
     </div>
   </div>
   <div class="inline-block space-x-4">
     <button
       class="bg-muted text-muted-foreground hover:text-foreground flex-none rounded-md px-4 py-2.5 text-xs font-semibold">
-      Import CSV
+      Importer CSV
     </button>
     <button class="bg-primary text-primary-foreground flex-none rounded-md px-4 py-2.5 text-xs font-semibold">
-      Add Member
+      Ajouter un utilisateur
     </button>
   </div>
 </div>
@@ -31,7 +31,7 @@
         <tr class="hover:bg-card/50" app-table-row [user]="user"></tr>
         } @empty {
         <tr>
-          <td class="py-4 text-center text-sm" colspan="7">No users found</td>
+          <td class="py-4 text-center text-sm" colspan="7">Aucun utilisateur enregistrer</td>
         </tr>
         }
       </tbody>

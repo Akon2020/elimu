@@ -5,13 +5,11 @@
     class="border-border text-muted-foreground flex flex-col border-dashed ltr:border-l ltr:pl-2 rtl:border-r rtl:pr-2">
     <li *ngFor="let sub of submenu.children">
       <div class="text-muted-foreground hover:text-primary relative flex" (click)="toggleMenu(sub)">
-        <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
           [ngTemplateOutletContext]="{ sub: sub }">
         </ng-container>
 
-        <!-- Parent Menu -->
         <ng-template #parentMenu let-sub="sub">
           <a
             [routerLink]="sub.route"
@@ -27,7 +25,6 @@
           }
         </ng-template>
 
-        <!-- Child Menu -->
         <ng-template #childMenu let-sub="sub">
           <a class="inline-block w-full cursor-pointer px-4 py-2 text-xs">
             {{ sub.label }}
@@ -43,7 +40,6 @@
           </button>
         </ng-template>
       </div>
-      <!-- Submenu items -->
       @if(sub.children?.length){
       <app-sidebar-submenu [submenu]="sub"></app-sidebar-submenu>
       }

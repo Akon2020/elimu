@@ -14,7 +14,7 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
 
   constructor(private themeService: ThemeService) {
     let baseColor = '#FFFFFF';
-    const data = [2100, 3200, 3200, 2400, 2400, 1800, 1800, 2400, 2400, 3200, 3200, 3000, 3000, 3250, 3250];
+    const data = [21, 32, 32, 24, 24, 18, 18, 24, 24, 32, 32, 30, 30, 32, 35];
     const categories = [
       '10AM',
       '10.30AM',
@@ -36,7 +36,7 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
     this.chartOptions = {
       series: [
         {
-          name: 'Etherium',
+          name: 'Utilisateur',
           data: data,
         },
       ],
@@ -67,7 +67,7 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
         curve: 'smooth',
         show: true,
         width: 3,
-        colors: [baseColor], // line color
+        colors: [baseColor],
       },
       xaxis: {
         categories: categories,
@@ -94,11 +94,10 @@ export class NftChartCardComponent implements OnInit, OnDestroy {
           },
         },
       },
-      colors: [baseColor], //line colors
+      colors: [baseColor],
     };
 
     effect(() => {
-      /** change chart theme */
       let primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
       this.chartOptions.tooltip = {
         theme: this.themeService.theme().mode,

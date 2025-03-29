@@ -5,9 +5,7 @@
     </small>
   </div>
   <ul class="flex flex-col">
-    <!-- List items -->
     <li *ngFor="let item of menu.items">
-      <!-- Menu List -->
       <div
         (click)="toggleMenu(item)"
         [ngClass]="{
@@ -15,18 +13,15 @@
           'hover:bg-card/50': !menuService.showSideBar
         }"
         class="text-muted-foreground hover:text-foreground group relative flex grow items-center gap-4 rounded-lg px-2">
-        <!-- Icon -->
         <div [ngClass]="item.active && !menuService.showSideBar ? 'text-primary' : 'text-muted-foreground/50'">
           <svg-icon src="{{ item.icon }}" [svgClass]="'h-5 w-5'"> </svg-icon>
         </div>
 
-        <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="item.children ? childMenu : parentMenu"
           [ngTemplateOutletContext]="{ item: item }">
         </ng-container>
 
-        <!-- Workaround:: Enable routerLink -->
         <ng-template #parentMenu let-item="item">
           <div
             routerLink="{{ item.route }}"
@@ -40,7 +35,6 @@
           </div>
         </ng-template>
 
-        <!-- Workaround:: Disable routerLink -->
         <ng-template #childMenu let-item="item">
           <div class="flex h-9 grow cursor-pointer items-center justify-start rounded-sm">
             <a
@@ -51,7 +45,6 @@
           </div>
         </ng-template>
 
-        <!-- Arrow Icon -->
         <button
           *ngIf="item.children"
           [ngClass]="{ hidden: !menuService.showSideBar }"
@@ -63,7 +56,6 @@
           }
         </button>
 
-        <!-- Tooltip -->
         <div class="z-1 fixed h-[36px]" *ngIf="!menuService.showSideBar">
           <span
             class="z-1 bg-foreground text-background absolute w-auto min-w-max translate-y-[2px] scale-0 rounded-md p-2 text-xs font-bold shadow-md transition-all duration-200 group-hover:scale-100 ltr:origin-left ltr:translate-x-10 rtl:origin-right rtl:-translate-x-10">
@@ -72,7 +64,6 @@
         </div>
       </div>
 
-      <!-- Submenu items -->
       <app-sidebar-submenu [submenu]="item"></app-sidebar-submenu>
     </li>
   </ul>

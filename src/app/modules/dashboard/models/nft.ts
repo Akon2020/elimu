@@ -1,11 +1,10 @@
 export interface Nft {
   id: number;
   title: string;
-  last_bid?: number;
-  price: number;
+  last_bid: string;
   creator?: string;
   avatar?: string;
-  instant_price?: number;
+  instant_price?: string;
   ending_in?: string;
   image: string;
 }

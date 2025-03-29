@@ -38,17 +38,17 @@ export class ProfileMenuComponent implements OnInit {
   public isOpen = false;
   public profileMenu = [
     {
-      title: 'Your Profile',
+      title: 'Profile',
       icon: './assets/icons/heroicons/outline/user-circle.svg',
       link: '/profile',
     },
     {
-      title: 'Settings',
+      title: 'Paramètres',
       icon: './assets/icons/heroicons/outline/cog-6-tooth.svg',
       link: '/settings',
     },
     {
-      title: 'Log out',
+      title: 'Deconnexion',
       icon: './assets/icons/heroicons/outline/logout.svg',
       link: '/auth',
     },
@@ -56,7 +56,7 @@ export class ProfileMenuComponent implements OnInit {
 
   public themeColors = [
     {
-      name: 'base',
+      name: 'defaut',
       code: '#e11d48',
     },
     {

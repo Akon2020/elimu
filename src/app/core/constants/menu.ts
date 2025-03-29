@@ -3,14 +3,18 @@ import { MenuItem } from '../models/menu.model';
 export class Menu {
   public static pages: MenuItem[] = [
     {
-      group: 'Base',
+      group: 'Home',
       separator: false,
       items: [
         {
           icon: 'assets/icons/heroicons/outline/chart-pie.svg',
           label: 'Dashboard',
-          route: '/dashboard',
-          children: [{ label: 'Nfts', route: '/dashboard/nfts' }],
+          route: '/dashboard/home',
+        },
+        {
+          icon: 'assets/icons/heroicons/outline/users.svg',
+          label: 'Utilisateur',
+          route: '/dashboard/users',
         },
         {
           icon: 'assets/icons/heroicons/outline/lock-closed.svg',
@@ -26,18 +30,12 @@ export class Menu {
         },
         {
           icon: 'assets/icons/heroicons/outline/exclamation-triangle.svg',
-          label: 'Errors',
+          label: 'Erreurs',
           route: '/errors',
           children: [
             { label: '404', route: '/errors/404' },
             { label: '500', route: '/errors/500' },
           ],
-        },
-        {
-          icon: 'assets/icons/heroicons/outline/cube.svg',
-          label: 'Components',
-          route: '/components',
-          children: [{ label: 'Table', route: '/components/table' }],
         },
       ],
     },
@@ -47,44 +45,34 @@ export class Menu {
       items: [
         {
           icon: 'assets/icons/heroicons/outline/download.svg',
-          label: 'Download',
+          label: 'Générer rapport',
           route: '/download',
         },
         {
-          icon: 'assets/icons/heroicons/outline/gift.svg',
-          label: 'Gift Card',
-          route: '/gift',
+          icon: 'assets/icons/heroicons/outline/cube.svg',
+          label: 'Booking des mentees',
+          route: '/booking',
         },
         {
-          icon: 'assets/icons/heroicons/outline/users.svg',
-          label: 'Users',
-          route: '/users',
+          icon: 'assets/icons/heroicons/outline/folder.svg',
+          label: 'Gérer les vidéos',
+          route: '/videos',
         },
       ],
     },
     {
-      group: 'Config',
+      group: 'Configuration',
       separator: false,
       items: [
         {
           icon: 'assets/icons/heroicons/outline/cog.svg',
-          label: 'Settings',
+          label: 'Paramètres',
           route: '/settings',
         },
         {
           icon: 'assets/icons/heroicons/outline/bell.svg',
           label: 'Notifications',
-          route: '/gift',
-        },
-        {
-          icon: 'assets/icons/heroicons/outline/folder.svg',
-          label: 'Folders',
-          route: '/folders',
-          children: [
-            { label: 'Current Files', route: '/folders/current-files' },
-            { label: 'Downloads', route: '/folders/download' },
-            { label: 'Trash', route: '/folders/trash' },
-          ],
+          route: '/notifications',
         },
       ],
     },

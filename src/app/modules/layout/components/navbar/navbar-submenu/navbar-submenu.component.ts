@@ -19,9 +19,6 @@ export class NavbarSubmenuComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    /**
-     * check if component is out of the screen
-     */
     if (this.submenuRef) {
       const submenu = this.submenuRef.nativeElement.getBoundingClientRect();
       const bounding = document.body.getBoundingClientRect();

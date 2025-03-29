@@ -1,12 +1,11 @@
 <ul #submenuRef class="bg-background shadow-custom mt-2 space-y-0.5 rounded-md py-3">
   <li class="flex font-semibold" *ngFor="let item of submenu">
-    <!-- Condition -->
+
     <ng-container
       [ngTemplateOutlet]="item.children ? childMenu : parentMenu"
       [ngTemplateOutletContext]="{ item: item }">
     </ng-container>
 
-    <!-- Parent Menu -->
     <ng-template #parentMenu let-item="item">
       <button
         [routerLink]="item.route"
@@ -22,7 +21,7 @@
       </button>
     </ng-template>
 
-    <!-- Child Menu -->
+
     <ng-template #childMenu let-item="item">
       <div class="dropdown relative flex w-full">
         <button
@@ -40,7 +39,7 @@
             </svg-icon>
           </span>
         </button>
-        <!-- Submenu Dropdown -->
+
         <div
           class="dropdown-content absolute top-0 min-w-[200px] ltr:left-[100%] ltr:origin-top-left rtl:right-[100%] rtl:origin-top-right"
           navbar-submenu
